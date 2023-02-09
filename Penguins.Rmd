@@ -1,0 +1,58 @@
+---
+title: "Penguins"
+author: "Caitlin Davis"
+date: "2023-02-09"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+## Data
+Morphological data analysis comparing 3 Antarctic penguin species from different islands: Gentoo, Adele and Chinstrap
+![](https://i.ytimg.com/vi/lM02wDTiX34/maxresdefault.jpg)
+## Single trait distribution
+```{r}
+#View(penguins) #view dataset in table
+dim(penguins) #dimensions of dataset
+colnames(penguins) #column headers
+
+na_removed_penguins<- penguins %>% filter(is.na(sex)== FALSE)
+```
+
+
+```{r}
+penguins %>%
+  ggplot() +
+  geom_density(mapping = aes(x = body_mass_g, fill= species), alpha=0.5) +
+  labs(x="Body Mass (g)", y="Density") +
+  facet_wrap(~species, nrow=3) +
+  theme_classic() 
+
+```
+
+## Relationship between multiple traits
+
+```{r}
+penguins %>%
+  ggplot() +
+  geom_point(mapping = aes(x = body_mass_g, y=flipper_length_mm, color= species)) +
+  labs(y= "Flipper Length (mm)", x="Body Mass (g)" ) +
+  theme_classic() 
+```
+
+
+
+## Sexual dimorphism
+```{r}
+na_removed_penguins %>%
+  ggplot() +
+  geom_density(mapping = aes(x = body_mass_g, fill=sex), alpha=0.5) +
+  facet_wrap(~species, nrow=3) +
+  labs(x= "Body Mass (g)", y= "Density") +
+  theme_classic() 
+```
+
