@@ -1,0 +1,12 @@
+---
+title: "About"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Penguins are fun & great! Palmer took morphological data from 3 Antarctic penguin species: Gentoo, Adele and Chinstrap. Here, we analyze some of their differences.
+
+![](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)

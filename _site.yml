@@ -1,0 +1,15 @@
+name: "Penguins of Antarctica"
+navbar:
+  title: "Penguins of Antarctica"
+  left:
+    - text: "Penguins"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - text: "Single trait distribution"
+      href: singletrait.html
+    - text: "Relationship between multiple traits"
+      href: multipletraits.html
+    - text: "Sexual dimorphism"
+      href: dimorphism.html
+output_dir: "."
